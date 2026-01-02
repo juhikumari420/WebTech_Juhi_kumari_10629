@@ -1,1 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM Manipulation Example</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    button { margin: 5px; padding: 6px 12px; }
+    li { margin: 4px 0; }
+  </style>
+</head>
+<body>
 
+<h2>Student List</h2>
+
+<input type="text" id="studentName" placeholder="Enter name">
+<br>
+
+<button id="addBtn">Add Student</button>
+<button id="removeBtn">Remove Last Student</button>
+<button id="modifyBtn">Modify First Student</button>
+
+<ul id="studentList"></ul>
+
+<script>
+  const addBtn = document.getElementById("addBtn");
+  const removeBtn = document.getElementById("removeBtn");
+  const modifyBtn = document.getElementById("modifyBtn");
+  const studentList = document.getElementById("studentList");
+  const studentName = document.getElementById("studentName");
+
+  // Append (add) child
+  addBtn.addEventListener("click", function () {
+    if (studentName.value !== "") {
+      const li = document.createElement("li");
+      li.innerText = studentName.value;
+      studentList.appendChild(li);
+      studentName.value = "";
+    }
+  });
+
+  // Remove child
+  removeBtn.addEventListener("click", function () {
+    if (studentList.lastChild) {
+      studentList.removeChild(studentList.lastChild);
+    }
+  });
+
+  // Modify child
+  modifyBtn.addEventListener("click", function () {
+    if (studentList.firstChild) {
+      studentList.firstChild.innerText = "Modified Student Name";
+    }
+  });
+</script>
+
+</body>
+</html>
