@@ -1,1 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Event Listener Demo</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    button { padding: 8px 16px; margin-top: 10px; }
+    input { padding: 6px; width: 200px; }
+  </style>
+</head>
+<body>
 
+<h2>Simple Interactive Form</h2>
+
+<label>Username:</label><br>
+<input type="text" id="username"><br>
+
+<button id="submitBtn">Submit</button>
+<button id="removeBtn">Remove Events</button>
+
+<p id="message"></p>
+
+<script>
+  const submitBtn = document.getElementById("submitBtn");
+  const removeBtn = document.getElementById("removeBtn");
+  const username = document.getElementById("username");
+  const message = document.getElementById("message");
+
+  // Mouse Event
+  function handleClick() {
+    message.innerText = "Hello, " + username.value;
+  }
+
+  // Keyboard Event
+  function handleKey(e) {
+    if (e.key === "Enter") {
+      message.innerText = "Enter key pressed";
+    }
+  }
+
+  // Mouse Hover Event
+  function handleMouseEnter() {
+    message.innerText = "Mouse over Submit button";
+  }
+
+  submitBtn.addEventListener("click", handleClick);
+  submitBtn.addEventListener("mouseenter", handleMouseEnter);
+  document.addEventListener("keydown", handleKey);
+
+  // Remove Events
+  removeBtn.addEventListener("click", function () {
+    submitBtn.removeEventListener("click", handleClick);
+    submitBtn.removeEventListener("mouseenter", handleMouseEnter);
+    document.removeEventListener("keydown", handleKey);
+    message.innerText = "All event listeners removed";
+  });
+</script>
+
+</body>
+</html>
