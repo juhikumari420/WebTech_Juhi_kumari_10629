@@ -1,0 +1,43 @@
+<!-- 4.	Design a webpage with an HTML form having text input, radio buttons, checkboxes, select menus, and submit/reset buttons -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <style>
+        .forms{
+           margin:19px;
+               }
+    </style>
+</head>
+<body>
+    <h3>
+        Here is a Feedback form. Your every Feedback really work for us. So, make sure u fill the form if any changes can be done or can 
+        be improved.
+    </h3>
+    <fieldset>
+        <legend>Feedback Form</legend>
+        <form>
+          <div id="name" class="forms">  <label for="name">Your Good Name::</label><br>
+             <input type="text" placeholder="name"><br></div>
+           <div id="Profession" class="forms">  Profession:: <br>
+           <label for="student" >Student</label>
+            <input type="radio" value="student" name="Profession">
+            <label for="teacher">Teacher</label>
+            <input type="radio" value="teacher" name="Profession">
+            <label for="faculty">Other faculty</label>
+            <input type="radio" value="faculty" name="Profession"><br></div>
+            
+          <div id="number" class="forms"> <label for="contact">Contact no.::</label><br>
+            <input type="number" placeholder="Contact no."><br></div>
+
+         <div  id="Feedback" class="forms"><label for="Feedback">Your Feedback</label><br>
+            <input type="text" placeholder="Your Feedback"></div>
+
+
+        </form>
+    </fieldset>
+
+</body>
+</html>
